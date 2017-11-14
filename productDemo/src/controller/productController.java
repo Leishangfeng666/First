@@ -51,6 +51,8 @@ public class productController {
 			int num = ps.del(Integer.parseInt(id));
 			
 			if(num>0){
+
+				System.out.println("!!!");
 				return "true";
 			}else{
 				return "";
@@ -67,8 +69,6 @@ public class productController {
 			p.setProductname(name);
 			p.setDescs(desc);
 			p.setCid(id);
-
-			System.out.println("!!!");
 			
 			int num = ps.add(p);
 			if(num>0){
