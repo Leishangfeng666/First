@@ -51,8 +51,6 @@ public class productController {
 			int num = ps.del(Integer.parseInt(id));
 			
 			if(num>0){
-
-				System.out.println("!!!");
 				return "true";
 			}else{
 				return "";
