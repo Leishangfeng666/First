@@ -67,6 +67,8 @@ public class productController {
 			p.setProductname(name);
 			p.setDescs(desc);
 			p.setCid(id);
+
+			System.out.println("!!!");
 			
 			int num = ps.add(p);
 			if(num>0){
@@ -74,7 +76,6 @@ public class productController {
 			}else{
 				return "";
 			}
-			
 			
 			
 		}

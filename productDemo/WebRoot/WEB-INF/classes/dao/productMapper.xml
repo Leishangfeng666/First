@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.productMapper">
+	<select id="getAll" resultType="pojo.product">
+	SELECT p.id,p.productname,p.Descs,c.Name FROM product p INNER JOIN  catagory c on c.id=p.cid LIMIT #{b},#{s}
+	</select>
+	
+	<select id="count" resultType="int">
+		select Count(*) from product
+	</select>
+	
+	<delete id="del" parameterType="int">
+		delete from product where id=#{id}
+	</delete>
+	
+	<insert id="add" parameterType="pojo.product">
+		insert into product(productname,Descs,cid) VALUES (#{productname},#{Descs},#{cid})
+	</insert>
+</mapper>
+
